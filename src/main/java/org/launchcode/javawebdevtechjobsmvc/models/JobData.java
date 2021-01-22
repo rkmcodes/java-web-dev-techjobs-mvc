@@ -32,10 +32,8 @@ public class JobData {
 
     public static ArrayList<Job> findAll() {
 
-        // load data, if not already loaded
         loadData();
 
-        // Bonus mission; normal version returns allJobs
         return new ArrayList<>(allJobs);
     }
 
@@ -51,7 +49,6 @@ public class JobData {
      */
     public static ArrayList<Job> findByColumnAndValue(String column, String value) {
 
-        // load data, if not already loaded
         loadData();
 
         ArrayList<Job> jobs = new ArrayList<>();

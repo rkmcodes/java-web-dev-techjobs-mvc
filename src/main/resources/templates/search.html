@@ -36,22 +36,19 @@
 
     <hr />
 
-    <!-- TODO #4 - Loop over the search results to display all job fields. -->
-
-    <th:block th:fragment = "displayJobs" th:each = "job : ${jobs}">
-        <table class="table"> <table class="job-listing">
+    <table class="job-listing">
+        <tr th:each="job : ${jobs}">
             <td>
-                <p th:text = "${'ID: ' + job.id}">Job ID</p>
-                <p th:text = "${'Employer: ' + job.employer}">Job Employer</p>
-                <p th:text = "${'Location: ' + job.location}">Job Location</p>
-                <p th:text = "${'Position Type: ' + job.positionType}">Job Position Type</p>
-                <p th:text = "${'Skill: ' + job.coreCompetency}">Job Core Competency</p>
+                <p th:text="${'ID: ' + job.getId()}"></p>
+                <p th:text="${'Name: ' + job.getName()}"></p>
+                <p th:text="${'Employer: ' + job.getEmployer()}"></p>
+                <p th:text="${'Location: ' + job.getLocation()}"></p>
+                <p th:text="${'Position Type: ' + job.getPositionType()}"></p>
+                <p th:text="${'Skill: ' + job.getCoreCompetency()}"></p>
             </td>
-        </table></table>
-    </th:block>
-
+        </tr>
+    </table>
 
 </div>
-
 </body>
 </html>
