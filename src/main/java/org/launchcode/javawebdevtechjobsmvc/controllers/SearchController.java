@@ -30,7 +30,6 @@ public class SearchController {
 
         if(searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
             jobs = JobData.findAll();
-            System.out.println(jobs);
             model.addAttribute("title", "Jobs with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("columns", columnChoices);
             model.addAttribute("jobs", jobs);
@@ -38,7 +37,6 @@ public class SearchController {
         }
         else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
-            System.out.println(jobs);
             model.addAttribute("title", "Jobs with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("columns", columnChoices);
             model.addAttribute("jobs", jobs);
